@@ -1,0 +1,8 @@
+<h1>Registries</h1>
+<ul>
+{% for register in object_list %}
+    <li>{{ register.pub_date|date }} - {{ register.headline }}</li>
+{% empty %}
+    <li>No registries yet.</li>
+{% endfor %}
+</ul>

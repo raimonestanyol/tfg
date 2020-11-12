@@ -1,0 +1,41 @@
+<h1>Registries</h1>
+<table>
+    <tr>
+        <th>AMB_T</th>
+        <th>BOILER_T</th>
+        <th>COOL_FLOW</th>
+        <th>COOL_T_IN</th>
+        <th>COOL_T_OUT</th>
+        <th>CURRENT</th>
+        <th>E_ENERGY</th>
+        <th>E_POWER</th>
+        <th>HEAD_T_SET</th>
+        <th>HEAT_T_CON</th>
+        <th>HRAT_T_LIM</th>
+        <th>STATUS</th>
+        <th>VDTTM</th>
+        <th>VOLTAGE</th>
+        <th>DATETIME</th>
+    </tr>
+{% for register in object_list %}
+        <tr>
+        <td>{{ register.AMB_T }}</td>
+        <td>{{ register.BOILER_T }}</td>
+        <td>{{ register.COOL_FLOW }}</td>
+        <td>{{ register.COOL_T_IN }}</td>
+        <td>{{ register.COOL_T_OUT }}</td>
+        <td>{{ register.CURRENT }}</td>
+        <td>{{ register.E_ENERGY }}</td>
+        <td>{{ register.E_POWER }}</td>
+        <td>{{ register.HEAD_T_SET }}</td>
+        <td>{{ register.HEAT_T_CON }}</td>
+        <td>{{ register.HRAT_T_LIM }}</td>
+        <td>{{ register.STATUS }}</td>
+        <td>{{ register.VDTTM }}</td>
+        <td>{{ register.VOLTAGE }}</td>
+        <td>{{ register.DATETIME }}</td>
+    </tr>
+{% empty %}
+    <tr>No registries yet.</tr>
+{% endfor %}
+</table>
