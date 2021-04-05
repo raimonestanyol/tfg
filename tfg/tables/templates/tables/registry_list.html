@@ -1,5 +1,20 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
 <h1>Registries</h1>
-<table>
+
+{%include "tables/pagination.html"%}
+
+<table class="table table-striped">
+    <thead class="thead-dark">
     <tr>
         <th>AMB_T</th>
         <th>BOILER_T</th>
@@ -17,7 +32,8 @@
         <th>VOLTAGE</th>
         <th>DATETIME</th>
     </tr>
-{% for register in object_list %}
+    </thead>
+{% for register in page_obj  %}
         <tr>
         <td>{{ register.AMB_T }}</td>
         <td>{{ register.BOILER_T }}</td>
@@ -39,3 +55,4 @@
     <tr>No registries yet.</tr>
 {% endfor %}
 </table>
+{%include "tables/pagination.html"%}
